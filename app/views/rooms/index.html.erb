@@ -7,11 +7,11 @@
 </div>
 
 
-<div class="hotels">
+<div class="rooms">
     <% @rooms.each do |room| %>
-    <div class="hotel-card">
+    <div class="room-card">
       <div class="room-image">
-        <%= cl_image_tag room.photo.key, class: "hotel-photo" if room.photo.attached? %>
+        <%= cl_image_tag room.photo.key%>
       </div>
       <div class="hotel">
         <h2><%= link_to room.hotel.name, room %></h2>

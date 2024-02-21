@@ -1,24 +1,19 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-  end
 
   def create
-    @booking = Booking.new(booking_params)
+    @room = Room.find(params[:room_id]) # Assuming the room ID is available in the params
+    @booking = current_user.bookings.build(booking_params.merge(room: @room))
     if @booking.save
-      redirect_to booking_path(params[:id]), notice: 'Booking was successfully created.'
+      redirect_to room_path(params[:room_id]), notice: 'Booking was successfully created.'
     else
-      render :new
+      redirect_to room_path(params[:room_id]), alert: "Booking was not created"
     end
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:name, :email, :phone, :date, :time)
+    params.require(:booking).permit(:starts_at, :end_at)
   end
 end

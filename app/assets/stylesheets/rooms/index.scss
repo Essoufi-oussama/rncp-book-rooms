@@ -1,14 +1,14 @@
 #index{
   margin: 10px 40px;
 
-  .hotels{
+  .rooms{
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 20px;
     // 3 CARD IN A ROW
-    .hotel-card{
+    .room-card{
       width: 30%;
       margin-bottom: 20px;
       background-color: white;

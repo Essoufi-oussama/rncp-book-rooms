@@ -1,5 +1,42 @@
 <div id="show">
+  <%=link_to rooms_path do %>
+    <i class="fa-solid fa-circle-arrow-left">Rooms</i>
+  <%end%>
+  <div class="room-details">
+    <div class="room-image">
+      <%= cl_image_tag @room.photo.key %>
+    </div>
+    <div class="room-infos">
+      <div class="room-details-container">
+        <div class="infos">
+          <h2><%= @room.hotel.name %></h2>
+          <div>
+            <p><i class="fa-solid fa-money-bill"></i></i> <span id="price"><%= @room.price_per_night %></span> MAD</p>
+            <p><i class="fa-solid fa-user"></i></i> <%= @room.capacity %></p>
+          </div>
+        </div>
+        <p><%= @room.hotel.address %></p>
+        <hr>
+        <div class="reservation">
+          <h2>Book this room</h2>
 
+          <label for="date_range">Select Check-in and check-out Range</label>
+          <input type="text" id="date_range" class="flatpickr" data-controller="datepicker" readonly>
+          <div id="nights" class="d-none">
+            <p>Total Nights: <span id="totalNights"></span></p>
+          </div>
+          <div class="d-none" id="total">
+            <p>Your total price is: <span id="total-price"></span>  MAD</p>
+          </div>
+        <%= form_with model: [@room, @booking] do |form| %>
 
+          <%= form.hidden_field :starts_at, id: "starts_at" %>
+          <%= form.hidden_field :end_at, id: "end_at" %>
+          <%= form.submit "Book now", class: "btn btn-primary" %>
+        <% end %>
 
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
