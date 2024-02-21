@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+# Create 10 hotels
+10.times do
+  hotel = Hotel.new(
+    name: Faker::Company.name,
+    address: Faker::Address.full_address,
+  )
+  hotel.save
+  # Create 4 rooms for each hotel
+  rand(1..3).times do
+    room = Room.new(
+      capacity: rand(1..4),
+      price_per_night: rand(50..200),
+      hotel: hotel
+    )
+    room.save
+  end
+end

@@ -6,10 +6,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to root_path, notice: 'Booking was successfully created.'
+      redirect_to booking_path(params[:id]), notice: 'Booking was successfully created.'
     else
       render :new
     end
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   private
