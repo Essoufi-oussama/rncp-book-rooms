@@ -53,9 +53,9 @@ gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem 'simple_form', '~> 5.3.0'
-gem "font-awesome-sass", "~> 6.1"
-gem "bootstrap", "~> 5.2"
 gem 'faker'
+gem "cloudinary"
+gem 'open-uri', '~> 0.3.0'
 
 
 
