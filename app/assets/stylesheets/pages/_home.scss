@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+  .bg-image{
+    background-image: url('https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex: 1;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+
+  }
+  .site-desc {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+  }

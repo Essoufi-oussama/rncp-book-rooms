@@ -15,7 +15,6 @@ export default class extends Controller {
     if (selectedDates.length === 2) {
       if (selectedDates.length === 2) {
       const [startDate, endDate] = selectedDates.map(date => date.toISOString().split('T')[0]);
-      console.log(startDate);
 
       const numberOfNights = this.calculateNumberOfNights(selectedDates[0], selectedDates[1]);
       document.getElementById('totalNights').innerText = numberOfNights;

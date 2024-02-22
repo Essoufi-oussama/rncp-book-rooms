@@ -15,12 +15,13 @@
             <p><i class="fa-solid fa-user"></i></i> <%= @room.capacity %></p>
           </div>
         </div>
+        <hr>
         <p><%= @room.hotel.address %></p>
         <hr>
         <div class="reservation">
           <h2>Book this room</h2>
 
-          <label for="date_range">Select Check-in and check-out Range</label>
+          <label for="date_range">Select Check-in and check-out date </label>
           <input type="text" id="date_range" class="flatpickr" data-controller="datepicker" readonly>
           <div id="nights" class="d-none">
             <p>Total Nights: <span id="totalNights"></span></p>
@@ -32,7 +33,7 @@
 
           <%= form.hidden_field :starts_at, id: "starts_at" %>
           <%= form.hidden_field :end_at, id: "end_at" %>
-          <%= form.submit "Book now", class: "btn btn-primary" %>
+          <%= form.submit "Book now", class: "btn btn-primary mt-2" %>
         <% end %>
 
         </div>

@@ -1,2 +1,7 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <div class="bg-image">
+    <div class="site-desc">
+      <h1>Book your next hotel room with us</h1>
+      <p>Find the best hotel rooms at the best prices</p>
+      <a href="<%= user_signed_in? ? rooms_path : new_user_session_path %>" class="btn btn-primary">Book now</a>
+    </div>
+  </div>

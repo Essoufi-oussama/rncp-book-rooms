@@ -47,4 +47,22 @@
     display: flex;
     justify-content: center;
   }
+
+  @media screen and (max-width: 812px) {
+      // 2 CARD IN A ROW
+    .rooms{
+      .room-card{
+        width: 45%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 611px) {
+      // 1 CARD IN A ROW
+    .rooms{
+      .room-card{
+        width: 100%;
+      }
+    }
+  }
 }
