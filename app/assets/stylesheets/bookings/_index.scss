@@ -1,0 +1,42 @@
+#bookings{
+
+  .booking-container{
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  }
+
+  .booking-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  }
+
+
+  .red-button{
+    margin:auto;
+    background-color: $red;
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    &:hover{
+      background-color: darken($red, 10%);
+    }
+
+  }
+
+  @media screen and (max-width: 460px){
+
+  }
+}

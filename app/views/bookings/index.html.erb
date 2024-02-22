@@ -1,0 +1,17 @@
+
+<div id="bookings" class="container">
+  <div class="booking-container">
+    <h3> Your bookings </h3>
+    <%@bookings.each do |booking|%>
+    <%nights = (booking.end_at.to_date - booking.starts_at.to_date).to_i %>
+        <div class="booking-details">
+            <h3><%= booking.room.hotel.name %></h3>
+            <p><%= booking.starts_at.strftime("%d %b %Y") %> - <%= booking.end_at.strftime("%d %b %Y") %></p>
+            <p><%= nights * booking.room.price_per_night %> MAD</p>
+          <div class="booking-actions">
+            <%= button_to "Cancel", booking_path(booking), method: :delete, turbo_confirm: "Are you sure?", class: "red-button" %>
+          </div>
+        </div>
+    <%end%>
+  </div>
+</div>

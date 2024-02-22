@@ -6,8 +6,23 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to room_path(params[:room_id]), notice: 'Booking was successfully created.'
     else
-      redirect_to room_path(params[:room_id]), alert: "Booking was not created"
+      flash.now[:alert] = @booking.errors.full_messages.join('. ').concat('.')
+      redirect_to room_path(params[:room_id]), alert: "#{flash.now[:alert]}"
     end
+  end
+
+  def index
+    @bookings = current_user.bookings
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
+  def destroy
+     @booking = Booking.find(params[:id])
+      @booking.destroy
+      redirect_to bookings_path, notice: 'Booking was successfully canceled.'
   end
 
 
